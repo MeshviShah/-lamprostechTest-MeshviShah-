@@ -1,0 +1,26 @@
+const values = new Map([
+    ['I' ,1],
+    ['V',5],
+    ['X',10],
+    ['L',50],
+    ['C',100],
+    ['D',500],
+    ['M',1000]
+    ])
+
+    function romantoint(string){
+        let result = 0 , cur , pre = 0;
+        for(const char of string.split(" ").reverse()){           //split functon split string or array
+         cur = values.get(char);
+         if(cur>=pre){
+             result = result + cur;
+         }
+         else{
+             result -= cur;
+         }
+         pre =cur;
+            
+        }
+        return result;
+    }
+    
